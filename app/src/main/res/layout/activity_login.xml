@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel" type="com.sample.myapplication.view.login.LoginViewModel"/>
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/userName"
+                android:text="@{viewModel.username}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/password"
+                android:text="@{viewModel.password}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <android.support.v7.widget.AppCompatButton
+                android:id="@+id/login"
+                android:onClick="@{()->viewModel.loginClick()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>
